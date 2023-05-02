@@ -13,7 +13,7 @@ FPS = pygame.time.Clock()
 HEIGHT = 800
 WIDTH = 1200
 
-FONT = pygame.font.SysFont("Comic Sans MS", 20)
+FONT = pygame.font.SysFont("comissansms", 50)
 
 COLOR_BLACK = (0, 0, 0)
 COLOR_WHITE = (255, 255, 255)
@@ -66,6 +66,8 @@ enemies = []
 bonuses = []
 
 score = 0
+
+sign = "Bonuses collected: "
 
 image_index = 0
 
@@ -128,7 +130,8 @@ while playing:
             score += 1
             bonuses.pop(bonuses.index(bonus))
 
-    main_display.blit(FONT.render(str(score), True,  COLOR_BLACK), (WIDTH - 50, 20))
+    main_display.blit(FONT.render(str(score), True,  COLOR_BLACK), (WIDTH - 50, 50))
+    main_display.blit(FONT.render(sign, True, COLOR_BLACK), (WIDTH - 450, 50))
     main_display.blit(player, player_rect)
 
     pygame.display.flip()
